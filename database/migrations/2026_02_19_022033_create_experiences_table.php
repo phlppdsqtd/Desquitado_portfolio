@@ -9,6 +9,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+    /*
     public function up(): void
     {
         Schema::create('experiences', function (Blueprint $table) {
@@ -17,6 +19,20 @@ return new class extends Migration
             $table->string('organization');
             $table->string('description');
             $table->integer('year');
+            $table->timestamps();
+        });
+    }
+    */
+
+    public function up()
+    {
+        Schema::create('experiences', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('company');
+            $table->string('duration');
+            $table->text('description');
+            $table->enum('type', ['work', 'education']);
             $table->timestamps();
         });
     }

@@ -9,10 +9,5 @@ class Experience extends Model
 {
     protected $table = 'experiences';
 
-    protected $fillable = [
-        'role',
-        'organization',
-        'description',
-        'year',
-    ];
+    protected $fillable = ['title', 'company', 'duration', 'description', 'type'];
 }

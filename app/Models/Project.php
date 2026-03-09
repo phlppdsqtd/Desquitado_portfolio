@@ -9,10 +9,5 @@ class Project extends Model
 {
     protected $table = 'projects';
 
-    protected $fillable = [
-        'title',
-        'description',
-        'tech_stack',
-        'year'
-    ];
+    protected $fillable = ['title', 'description', 'technologies'];
 }

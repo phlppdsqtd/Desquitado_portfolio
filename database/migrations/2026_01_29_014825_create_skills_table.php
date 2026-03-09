@@ -9,12 +9,27 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+    /*
     public function up(): void
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('level');
+            $table->timestamps();
+        });
+    }
+    */
+
+    public function up()
+    {
+        Schema::create('skills', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('category');
+            $table->string('level');
+            $table->string('icon_name');
             $table->timestamps();
         });
     }

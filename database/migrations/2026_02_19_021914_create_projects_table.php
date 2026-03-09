@@ -9,6 +9,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+    /*
     public function up(): void
     {
         Schema::create('projects', function (Blueprint $table) {
@@ -17,6 +19,18 @@ return new class extends Migration
             $table->string('description');
             $table->string('tech_stack');
             $table->integer('year');
+            $table->timestamps();
+        });
+    }
+    */
+
+    public function up()
+    {
+        Schema::create('projects', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->string('technologies');
             $table->timestamps();
         });
     }

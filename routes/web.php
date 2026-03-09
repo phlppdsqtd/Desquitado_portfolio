@@ -16,24 +16,11 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/projects', [ProjectController::class, 'index']);
-Route::get('/experience', [ExperienceController::class, 'index']);
-Route::get('/skills', [SkillController::class, 'index']);
 
-
-// Route::get('/', function () {
-//     return view('home');
-// });
-
-// Route::get('/about', function () {
-//     return view('about');
-// });
-
-// Route::get('/projects', function () {
-//     return view('projects');
-// });
-
-// Route::get('/contacts', function () {
-//     return view('contacts');
-// });
+Route::middleware(['portfolio.access'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/skills', [SkillController::class, 'index'])->name('skills');
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+    Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+});
